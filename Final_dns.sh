@@ -76,9 +76,9 @@ curl -XGET "192.168.2.244:9200/capture-$now/metadata/_search?size=10000" -H 'Con
 	else .
 	end 
 	) |
-from_entries '  | jq -c . > "/home/dipawali/spark-2.0.2-bin-hadoop2.7/bin/DNS_DATA/Dnsdata27.json"
+from_entries '  | jq -c . > "/home/users/spark-2.0.2-bin-hadoop2.7/bin/DNS_DATA/Dnsdata.json"
 
- /home/dipawali/spark-2.0.2-bin-hadoop2.7/bin/spark-submit --class "org.apache.spot.SuspiciousConnects" --master local /home/dipawali/spark-2.0.2-bin-hadoop2.7/bin/target/scala-2.10/spotmldns.jar --analysis "dns"  --input "/home/dipawali/spark-2.0.2-bin-hadoop2.7/bin/DNS_DATA/Dnsdata27.json"   --dupfactor 1000   --feedback "/home/dipawali/spark-2.0.2-bin-hadoop2.7/bin/feedback.csv"   --ldatopiccount 20 --scored /home/dipawali/spark-2.0.2-bin-hadoop2.7/bin/scores   --threshold 1 --maxresults -1 --esnode "192.168.2.244" --esport "9200"
+ /home/users/spark-2.0.2-bin-hadoop2.7/bin/spark-submit --class "org.apache.spot.SuspiciousConnects" --master local /home/users/spark-2.0.2-bin-hadoop2.7/bin/target/scala-2.10/spotmldns.jar --analysis "dns"  --input "/home/users/spark-2.0.2-bin-hadoop2.7/bin/DNS_DATA/Dnsdata.json"   --dupfactor 1000   --feedback "/home/users/spark-2.0.2-bin-hadoop2.7/bin/feedback.csv"   --ldatopiccount 20 --scored /home/users/spark-2.0.2-bin-hadoop2.7/bin/scores   --threshold 1 --maxresults -1 --esnode "192.168.2.244" --esport "9200"
 
 
 
