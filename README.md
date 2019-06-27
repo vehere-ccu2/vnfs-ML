@@ -1,4 +1,4 @@
-# vnfs-ML
+# vnfs-ml
 Machine learning routines for Vehere Network Forensic System.
 
 vnfs-ml contains routines for performing suspicious connections analyses on DNS data gathered from a network. These analyses consume collections of network events and produce lists of the events that are considered to be the least probable (most suspicious).
